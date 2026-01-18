@@ -1,0 +1,35 @@
+<style>
+    /* ... existing styles (gradient-bg, card-hover) ... */
+
+ .sidebar-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+}
+
+/* Tooltip style */
+.sidebar-item::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 90px;
+    background: #1d4ed8;      /* blue-700 */
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+/* Show only on hover */
+.sidebar-item:hover::after {
+    opacity: 1;
+    left: 75px;
+}
+
+</style>
